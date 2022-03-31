@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+
+    <link rel="stylesheet" href="./home.css"/>
+</head>
+<body>
+    
+    <!-- Topbar............................................... -->
+    <header>
+        <nav id="topbar">
+            <div id="left-menu">
+                <a href="" id="page-title"><b>SHOP</b>LANE</a>
+                <a href="" class ="items-in-topbar" >CLOTHING</a>
+                <a href="" class ="items-in-topbar">ACCESSORIES</a>
+            </div>
+            
+            <div id="searchbar-wrapper">
+                <input id="search-box" type="text" placeholder="Search for Clothing and Accessories"/>
+            </div>
+                <img id="profile-pic" src="data:image/png;base64,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"/>
+
+            <div id="right-menu">
+                <a id="btn-login" href="./login.html" class="user-menu-item">Login</a>
+                <a id="btn-logout" href="./home.html" class="user-menu-item" onclick="LOGOUT()">Logout</a>
+
+                <div class="dropdown">
+                    <img  id="profile-pic2" src="/my html files/ECOMMERCE/photos/lion3.jpg"/>
+                    <div class="dropdown-content">
+                      <a target="_blank" href="./profile.html">View Profile</a>
+                      <a target="_blank" href="./Dashboard.html">Your Dashboard</a>
+                      <a target="_blank" href="./settings.html">Settings</a>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Body........................................................ -->
+    <main>
+        <!-- CardList 1................................. -->
+        <div>
+            <div class="paragraph1">
+                <p class="para1">Clothing for Men and Women</p>
+            </div>
+            <div class="main" id="gap1">
+                <div id="maa"></div>
+                <div id="Accessories-section"></div>
+            </div>
+        </div>
+    
+    
+        <!-- CardList 2...................................... -->
+        <div id="wrapperList-gap">
+            <div class="paragraph1">
+                <p class="para1">Accessories for Men and Women</p>
+            </div>
+            <div class="main" id="gap2">
+                <div id="maa2"></div>
+                <div id="Accessories-section"></div>
+            </div>        
+        </div>
+    </main>
+
+    
+    <!-- footer..................................................... -->
+    <footer>
+        <div id="footer-wrapper">
+            <div class="footer-list">
+                <a href="" ><h4>ONLINE STORE</h4></a>
+                <a href="" ><h5>MEN CLOTHING</h5></a>
+                <a href="" ><h5>WOMEN CLOTHING</h5></a>
+                <a href="" ><h5>MEN ACCESSORIES</h5></a>
+                <a href="" ><h5>WOMEN ACCESSORIES</h5></a>
+            </div>
+            <div class="footer-list">
+                <a href="" ><h4>HELPFUL LINKS</h4></a>
+                <a href="" ><h5>HOME</h5></a>
+                <a href="" ><h5>ABOUT</h5></a>
+                <a href="" ><h5>CONTACT</h5></a>
+            </div>
+            <div class="footer-list">
+                <a href="" ><h4>PARTNERS</h4></a>
+                <a href="" ><h5>ZARA</h5></a>
+                <a href="" ><h5>PANTALOONS</h5></a>
+                <a href="" ><h5>LEVIS</h5></a>
+                <a href="" ><h5>UCB</h5></a>
+                <a href="" ><h5>+ MANY MORE</h5></a>
+            </div>
+            <div class="footer-list">
+                <a href="" ><h4>ADDRESS</h4></a>
+                <a href="" ><h5>BUILDING 101</h5></a>
+                <a href="" ><h5>CENTRAL AVENUE</h5></a>
+                <a href="" ><h5>LA - 902722</h5></a>
+                <a href="" ><h5>UNITED STATES</h5></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./home.js"></script>
+
+</body>
+</html>

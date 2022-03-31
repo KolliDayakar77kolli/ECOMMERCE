@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #mainDiv {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        }
+        #imgDiv {
+        width: 40%;
+        }
+        #imgDiv img {
+        width: 100%;
+        }
+        #detailsDiv {
+        width: 60%;
+        margin-top: 40px;
+        padding-left: 30px;
+        }
+        .product-detials {
+        margin-bottom: 40px;
+        }
+        .preview-img-div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            margin-top: 20px;
+        }
+
+        .preview-img-div img {
+            margin: 5px;
+            width: 15%;
+            height: 30%;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 6px;
+        }
+        .active {
+            border: 2px solid #009688;
+        }
+        .non {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="imgDiv"></div>
+  
+        <div id="detailsDiv">
+]
+            <div class="product-preview-div">
+              <div class="preview-img-div"></div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <script>
+        var productData = {
+            id: "1",
+            preview:
+                "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
+            previewPhotos: [
+                "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
+                "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/efc3d5b9-1bb3-4427-af53-7acae7af98951541402833591-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-2.jpg",
+                "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/c7e58861-3431-4189-9903-9880f5eebd181541402833566-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-3.jpg",
+                "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg",
+                "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/957be784-7c5d-4e90-ab9f-0928015b22891541402833645-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-5.jpg",
+            ]
+        };
+        var imgDiv = document.getElementById("imgDiv");
+        var detailsDiv = document.getElementById("detailsDiv");
+        var productDetials = document.querySelector(".product-detials");
+
+
+        //  left img
+        var leftImg = document.createElement("img");
+        leftImg.setAttribute("id", "mainImg");
+        leftImg.src = productData.preview;
+        imgDiv.appendChild(leftImg);
+        // left img end
+
+        
+// product preview div
+var productPreviewDiv = document.createElement("div");
+productPreviewDiv.className = "product-preview-div";
+productDetials.appendChild(productPreviewDiv);
+
+// preview img div
+var PreviewImgDiv = document.createElement("div");
+PreviewImgDiv.setAttribute("id", "preview-img");
+console.log(PreviewImgDiv);
+PreviewImgDiv.className = "preview-img-div";
+productPreviewDiv.appendChild(PreviewImgDiv);
+
+var previewPhotos = productData.previewPhotos;
+
+var previewImgDiv = document.getElementById("preview-img");
+
+for (var i = 0; i < previewPhotos.length; i++) {
+  if (i == 0) {
+    previewImgDiv.innerHTML += ` <img  id ="img${i}" onclick =  "smallImageClicked('img${i}')"   class = "active" src= ${previewPhotos[i]}  /> `;
+  } else {
+    previewImgDiv.innerHTML += ` <img  id = "img${i}" onclick =  "smallImageClicked('img${i}')" src= ${previewPhotos[i]}  /> `;
+  }
+}
+
+var mainLeftImg = document.getElementById("mainImg");
+
+var currentActiveId = "img0";
+function smallImageClicked(e) {
+  var previewSmallImg = document.getElementById(e);
+  mainLeftImg.src = previewSmallImg.src;
+  var newEl = e;
+  previewSmallImg.className = "active";
+  var currentOnActiveEl = document.getElementById(currentActiveId);
+  currentOnActiveEl.className = "non";
+  currentActiveId = newEl;
+}
+    </script>
+</body>
+</html>
